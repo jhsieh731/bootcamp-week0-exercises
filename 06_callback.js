@@ -7,7 +7,7 @@
 
 const coinToss = (guess, callback) => {
   const result = Math.round(Math.random())
-  const didWin = guess === result
+  const didWin = (guess === result)
   callback(didWin)
 }
 
@@ -19,3 +19,13 @@ const getUser = (callback) => {
   }
   callback(user)
 }
+
+const makeAGuess = (cbuser) => {
+  const guess = cbuser.guess;
+  const decider = (win) => {
+    console.log(win ? "You win!" : "You lose!") ;
+  }
+  coinToss(guess,decider)
+}
+
+getUser(makeAGuess)

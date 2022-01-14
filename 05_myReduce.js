@@ -1,10 +1,9 @@
 /**
-  Implement your own version or Array.reduce()
+  Implement your own version of Array.reduce()
   The function should take:
     an array: arr
     a function: f
     an initial value: init
-  The function should output the new list with only the elements for which f(arr[i]) === true
   Example:
     myReduce([12, -3, 6], (accumulator, current) => accumulator + current, 0)
     -> 15
@@ -12,6 +11,13 @@
     -> 20
 */
 
-const myReduce = (arr, f, init) => {}
+const myReduce = (arr, f, init) => {
+  let sum = init;
+  console.log(typeof f);
+  arr.forEach( (value) => {
+    sum = f(sum, value);
+  })
+  return sum;
+}
 
 module.exports = myReduce
